@@ -32,3 +32,358 @@
 
     .badge {
       display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .badge::before {
+      content: "●";
+      color: #4ade80;
+      margin-right: 6px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle { color: rgba(255, 255, 255, 0.6); font-size: 1rem; margin-bottom: 30px; }
+
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: rgba(167, 139, 250, 0.2);
+      border-color: rgba(167, 139, 250, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      border: none;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-value.ok { background: linear-gradient(135deg, #4ade80, #22c55e); -webkit-background-clip: text; }
+    .stat-value.warn { background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; }
+    .stat-value.bad { background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; }
+
+    .stat-unit { font-size: 1rem; color: rgba(255, 255, 255, 0.4); margin-left: 4px; }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 14px;
+    }
+
+    th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    .status-pass {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      border-radius: 50px;
+      color: #4ade80;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+    .status-fail {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 50px;
+      color: #ef4444;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .chart-wrap {
+      width: 100%;
+      height: 280px;
+      position: relative;
+    }
+
+    .timestamp {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">API MONITORING / IPIFY</div>
+      <h1>Dashboard<br>Tests as Code</h1>
+      <p class="subtitle">Surveillance automatisée de l'API ipify • Sabrina Mhidi</p>
+      <div class="actions">
+        <a href="/run" class="btn primary">▶ Lancer un run</a>
+        <a href="/api/last" class="btn">→ Dernier run (JSON)</a>
+        <a href="/api/runs" class="btn">→ Historique (JSON)</a>
+        <a href="/health" class="btn">→ /health</a>
+      </div>
+    </div>
+
+    {% if last_run %}
+    <!-- Statistiques du dernier run -->
+    <div class="grid">
+      <div class="stat">
+        <div class="stat-label">Tests passés</div>
+        <div class="stat-value ok">{{ last_run.passed }}<span class="stat-unit">/{{ last_run.passed + last_run.failed }}</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Taux d'erreur</div>
+        <div class="stat-value {% if last_run.error_rate == 0 %}ok{% elif last_run.error_rate < 0.1 %}warn{% else %}bad{% endif %}">
+          {{ (last_run.error_rate * 100) | round(1) }}<span class="stat-unit">%</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Latence moy.</div>
+        <div class="stat-value">{{ last_run.latency_avg }}<span class="stat-unit">ms</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Latence p95</div>
+        <div class="stat-value">{{ last_run.latency_p95 }}<span class="stat-unit">ms</span></div>
+      </div>
+    </div>
+
+    <!-- Détail du dernier run -->
+    <div class="card">
+      <div class="card-title">Détail du dernier run — <span class="timestamp">{{ last_run.timestamp }}</span></div>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Statut</th>
+            <th>Latence</th>
+            <th>Détails</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for t in last_run.details_parsed %}
+          <tr>
+            <td><code>{{ t.name }}</code></td>
+            <td>
+              {% if t.status == "PASS" %}
+                <span class="status-pass">✓ PASS</span>
+              {% else %}
+                <span class="status-fail">✗ {{ t.status }}</span>
+              {% endif %}
+            </td>
+            <td>{{ t.latency_ms }} ms</td>
+            <td style="color:rgba(255,255,255,0.5);font-size:12px;">{{ t.details or "—" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Graphique historique -->
+    {% if runs|length > 1 %}
+    <div class="card">
+      <div class="card-title">Évolution de la latence (avg + p95) — {{ runs|length }} derniers runs</div>
+      <div class="chart-wrap">
+        <canvas id="latencyChart"></canvas>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Historique -->
+    <div class="card">
+      <div class="card-title">Historique des runs</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Passés</th>
+            <th>Échoués</th>
+            <th>Taux d'erreur</th>
+            <th>Latence avg</th>
+            <th>Latence p95</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in runs %}
+          <tr>
+            <td class="timestamp">{{ r.timestamp }}</td>
+            <td><span class="status-pass">{{ r.passed }}</span></td>
+            <td>{% if r.failed > 0 %}<span class="status-fail">{{ r.failed }}</span>{% else %}0{% endif %}</td>
+            <td>{{ (r.error_rate * 100) | round(1) }} %</td>
+            <td>{{ r.latency_avg }} ms</td>
+            <td>{{ r.latency_p95 }} ms</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const runs = {{ runs | tojson }};
+      const reversed = runs.slice().reverse();
+      const labels = reversed.map(r => r.timestamp.split('T')[1] || r.timestamp);
+      const avg = reversed.map(r => r.latency_avg);
+      const p95 = reversed.map(r => r.latency_p95);
+
+      if (document.getElementById('latencyChart') && runs.length > 1) {
+        new Chart(document.getElementById('latencyChart'), {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Latence moy. (ms)',
+                data: avg,
+                borderColor: '#a78bfa',
+                backgroundColor: 'rgba(167, 139, 250, 0.15)',
+                fill: true,
+                tension: 0.4,
+                borderWidth: 2
+              },
+              {
+                label: 'Latence p95 (ms)',
+                data: p95,
+                borderColor: '#60a5fa',
+                backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                fill: false,
+                tension: 0.4,
+                borderWidth: 2,
+                borderDash: [5, 5]
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: 'rgba(255,255,255,0.85)' } }
+            },
+            scales: {
+              x: {
+                ticks: { color: 'rgba(255,255,255,0.5)' },
+                grid: { color: 'rgba(255,255,255,0.05)' }
+              },
+              y: {
+                ticks: { color: 'rgba(255,255,255,0.5)', callback: v => v + ' ms' },
+                grid: { color: 'rgba(255,255,255,0.05)' }
+              }
+            }
+          }
+        });
+      }
+    </script>
+
+    {% else %}
+    <!-- Pas encore de run -->
+    <div class="card">
+      <div class="empty">
+        <h2 style="margin-bottom:15px;font-weight:500;">Aucun run pour le moment</h2>
+        <p style="margin-bottom:20px;">Clique sur <strong>▶ Lancer un run</strong> pour exécuter la suite de tests.</p>
+        <a href="/run" class="btn primary">▶ Lancer le premier run</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
