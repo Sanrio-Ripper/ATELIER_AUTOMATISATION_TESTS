@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------
-🎯Atelier “Testing as Code & API Monitoring”
+<!-- Sabrina Mhidi - Atelier Automatisation Tests -->
 ------------------------------------------------------------------------------------------------------
 Aujourd’hui, vous allez passer du rôle de développeur au rôle d’ingénieur qualité.  
   
